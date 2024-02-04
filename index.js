@@ -2,24 +2,29 @@ let youtuber = {
     list: {
         business: {
             youtuber: [
-                { name: "しまぶー", age:20, teachProgramming() {} },
-                { name: "あっちゃん", age:37, teachHistory() {} }
+                { name: "しまぶー", age: 20, teachProgramming() { } },
+                { name: "あっちゃん", age: 37, teachHistory() { } }
             ],
-            teach() {}
+            teach() { }
         },
         entertainment: {
             youtuber: [
                 { name: "ヒカキン" },
-                { name: "はじめしゃちょー"}
+                { name: "はじめしゃちょー" }
             ],
-            makeSmile() {}
+            makeSmile() { }
         }
     },
-    plan() {},
-    uploadVideo() {}
+    plan() { },
+    uploadVideo() { }
 };
-youtuber.list.business.youtuber[0].teachProgramming();
 
-youtuber.plan();
 
-youtuber.list.entertainment.makeSmile();
+//windowやdocumentについて
+window.console.log();
+
+window.alert();
+
+window.document.getElementById();
+
+
