@@ -132,3 +132,81 @@ console.log(obj.foo);
  * constを優先的に使い，letをしぶしぶ使い，varを使うと負けだと思う．
  * 厳密なほうが良い．
  */
+
+
+/**　関数とは何か？
+ *   タスクや値計算を実行する文の集まり
+ *   関数は料理を手伝う子供たちと覚える
+ *   子供が料理を手伝がる時とかがあり，子供に役割分担して料理を手伝わせるから
+ *   関数があることで，自分の役割がはっきりし，繰り返し使えるところがメリット．
+ * 　プログラミングときには，コードの見やすさやコード量の削減につながる．
+ *   関数==メソッドと思ってよい．
+ */
+
+//メソッドの短縮記法
+const goo = {
+    // alert: function () {},
+    alert() {},
+};
+
+/** function 関数名(仮引数1，仮引数2) {
+ *      //色々処理...
+ *      return 関数の返り値;
+ * } 
+ * 
+ * 関数名は変数名の付け方と同じでcamelCaseを使う
+ * 
+ * 関数の場合，最初の方を動詞にすることがよくある．
+ * 
+ * 何かを付け加えるとき，addGooとか，
+ * 何かをチェックするとき，isGooとか
+ * 
+ * function cut(food) {
+ *      //切る処理
+ *      const cutFood = food.slice();
+ *      return cutFood;
+ * }
+ * 
+ * const cutCarrot = cut(carrot);
+ * const cutPoteto = cut(poteto);
+ * 
+ * 引数とは，呼び出し側から与えることができるデータ
+ * 
+ * 例：呼び出し方
+ * cut();
+ * 
+ * cut(food)とすることでfunctionの中でfoodが使えるということ．
+ * cut(carrot); //人参
+ * cut(poteto); //じゃがいも　とするとcarrotやpotetoをfoodに渡すことができる．
+ * 
+ * returnの有無で何が違うのか
+ * 料理でいうと，食材を捨てるときや，料理をテーブルに運ぶときは，
+ * その返り値はいらないというようなイメージ
+ * 
+ * 例：function throwAway(food) {
+ *      // 捨てる処理...
+ *      delete food;
+ * }
+ * 
+ * function isTweetable(text) {
+ *      return text.length <= 1;
+ * }
+ * 
+ * console.log(isTweetable("foo"));
+ * trueが出力される
+ * 
+ * function alertTweetable(text) {
+ *      if (text.length <= 140) {
+ *          alert("you can tweet!");
+ *      }
+ * }
+ * 
+ * alertTweetable("foo");
+ * you can tweet!が出力される
+ * 
+ * function alertTweetable(text) {
+ *      if (isTweetable(text)) {
+ *          alert("you can tweet!");
+ *      }
+ * }でも同じような出力がされる.
+ * */
