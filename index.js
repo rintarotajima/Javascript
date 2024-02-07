@@ -210,3 +210,112 @@ const goo = {
  *      }
  * }でも同じような出力がされる.
  * */
+
+
+/** 匿名（無名）関数について理解する
+ *  関数は値として利用できる（関数式）
+ * 
+ *  関数式の例
+ * 
+ * function isTweetable(text) {
+ *      return text.length <= 140; 
+ * };
+ * 
+ * const isTweetable = function(text) {
+ *      return text.length <= 140;
+ * }
+ * 
+ * 関数を変数の中に値として入れ込んだものが関数式
+ * 
+ * 一般的に関数は関数名が必要であるが，なくてもいけるのが匿名関数
+ * 重要なのはこのような関数を匿名関数という名前とかを覚えるのでなくて
+ * 関数名がなくても関数の役割を果たすということを理解する．
+ */
+
+/** コールバック関数について
+ * 
+ * 構文
+ * function 高階関数(コールバック関数) {
+ *      コールバック関数();
+ * };
+ * 
+ * コールバック関数は引数として渡されている関数
+ * 引数に関数を渡すことも可能だということ
+ * 引数に関数を受け取った関数を高階関数
+ * 関数の中で関数を実行する関数
+ * 
+ * 
+ * 普通の関数との比較
+ * function bring(food) {
+ *      if ("手洗いが終わったら") {
+ *          // 食材を持ってきてもらう処理
+ *      }
+ * };
+ * 
+ * function peer(food) {
+ *      if ("手洗いが終わったら") {
+ *          //食材の皮をむく処理
+ *      }
+ * }
+ * 
+ * function cut(food) {
+ *      if ("手洗いが終わったら") {
+ *          //食材を切ってもらう処理
+ *      }
+ * }
+ * 
+ * 高階関数を使った時の処理
+ * function washed(fn) {
+ *      if ("手洗いが終わったら") {
+ *          fn(); //コールバック関数の処理
+ *      }
+ * }
+ * 
+ * function bring(food) {
+ *      //食材を持ってきてもらう処理
+ * }
+ * 
+ * function peer(food) {
+ *      //食材の皮をむく処理
+ * }
+ * 
+ * function cut(food) {
+ *      //食材を切ってもらう処理
+ * }
+ * 
+ * washed(bring);
+ * 
+ * 
+ * Twitterを活用した例
+ * function unfollow() {
+ *  console.log("フォローを外しました");
+ * }
+ * 
+ * function cancelTweet() {
+ *  console.log("ツイートをキャンセルしました");
+ * }
+ * 
+ * function confirmed(fn) {
+ *      if (window.confirm("実行しますか")) {
+ *          fn();
+ *      }
+ * }
+ * 
+ * confirmed(unfollow);で実行しますかをはいとすると
+ * フォローを外しましたが出力される
+ * confirmed(cancelTweet);で実行しますかをはいとすると
+ * ツイートをキャンセルしましたが出力される
+ * 
+ * またcancelTweet関数を関数式として利用することも出来る
+ * const cancelTweet = function () {
+ *  console.log("ツイートをキャンセルしました");
+ * }
+ * confirmed(cancelTweet);で実行しますかをはいとすると
+ * ツイートをキャンセルしましたが出力される
+ * 
+ * またconfirmed(fn)のfnというコールバック関数に匿名関数を利用することも出来る
+ * confirmed ( function() {
+ *  console.log("ツイートをキャンセルしました");
+ * })
+ * を実行しても同様にツイートをキャンセルしましたが出力される
+ */
