@@ -5,7 +5,7 @@ const reset = document.getElementById("resetBtn"); // ページ内のIDがresetB
 const result = document.getElementById("result"); // ページ内のIDがresultである要素を取得し，変数resultに格納
 
 // 東京ドームの面積（平方メートル）
-const tokyoDomeArea = 46315; 
+const tokyoDomeArea = 46315;
 
 // 東京ドーム何個分を計算して表示する関数
 function calculateTokyoDome() {
@@ -28,6 +28,29 @@ function resetTokyoDome() {
 
 
 // イベントリスナーの設定
-button.addEventListener("click", calculateTokyoDome); // ボタンがクリックされたときに，calulateTokyoDome 関数を呼び出す.
-reset.addEventListener("click", resetTokyoDome); // ボタンがクリックされたときに，resetTokyoDome 関数を呼び出す.
+// ボタンがクリックされたときに，calulateTokyoDome 関数を呼び出す.
+button.addEventListener("click", function() {
+    calculateTokyoDome();
+});
+// ボタンがクリックされたときに，resetTokyoDome 関数を呼び出す.
+reset.addEventListener("click", function() {
+    resetTokyoDome();
+});
+
+
+/** Javascriptの知識
+ * DOMとは？
+ * DOM（Document Object Model）はWebページやXML文書のプロフラム内での表現を提供する階層的なオブジェクトの集合体
+ * →HTMLやXML文書の構造を表現し，プロフラムからアクセスや操作が可能になる=Javascriptのオブジェクトとして扱える.
+ * 
+ * オブジェクトとは？
+ * オブジェクトはデータとそのデータに関する操作をまとめたもので，特定のプロパティ（データ）とメソッド（操作）を持っている
+ * 例）オブジェクトが自転車だとみなすと，プロパティとして色や速度，メソッドとして走る，止まるなどがあるイメージ
+ * 
+ * DOM要素の取得とは？
+ * JavascriptによってHTML文書内の特定の要素にアクセスするためには，その要素を取得する必要がある．
+ * そこで，document.getElementById()メソッドを使うとHTML要素のID属性に基づいて要素を取得する.
+ * 
+ * 
+ */
 
