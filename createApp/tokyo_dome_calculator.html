@@ -7,14 +7,16 @@
 </head>
 
 <body>
-    <div>
-        <label for="inputArea">気になる場所：</label>
-        <input type="number" id="inputArea">
+    <div class="container">
+        <div class="content">
+            <label for="inputArea">気になる場所</label>
+            <input type="number" id="inputArea">
+            <button id="calculateBtn">計算</button>
+            <p id="result"></p>
+        </div>
+        <!-- /.content -->
     </div>
-
-    <button id="calculateBtn">計算しろ</button>
-
-    <p id="result"></p>
+    <!-- /.container -->
 
     <script src="tokyo_dome_calculator.js"></script>
 </body>
