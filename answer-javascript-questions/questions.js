@@ -7,13 +7,13 @@ function sayHi() {
 
 //  sayHi();
 
- /* 
- 選択肢
- A: Rintaroとundefined
- B: RintaroとRefference Error
- C: Refference Errorと22
- D: undefinedとRefference Error
- */
+/* 
+選択肢
+A: Rintaroとundefined
+B: RintaroとRefference Error
+C: Refference Errorと22
+D: undefinedとRefference Error
+*/
 
 /* 
 答え；D
@@ -24,12 +24,12 @@ letキーワード（またはconst）を持つ変数は持ち上げられます
 宣言される前に変数にアクセスしようとすると、JavaScriptは ReferenceErrorを投げ
 */
 
-for (var i=0; i<3; i++) {
-    setTimeout(() => console.log(i),1)
+for (var i = 0; i < 3; i++) {
+    setTimeout(() => console.log(i), 1)
 }
 
-for (let i=0; i<3; i++) {
-    setTimeout(() => console.log(i),1)
+for (let i = 0; i < 3; i++) {
+    setTimeout(() => console.log(i), 1)
 }
 
 /*
@@ -47,4 +47,27 @@ JavaScriptのイベントキューのため、setTimeoutコールバック関数
 
 2番目のループでは、変数iがletキーワードを使って宣言されている。let(またはconst)キーワードで宣言された変数はプロックスコープ
 （ブロックは{}の間のもの）。それぞれの繰り返しの間、iは新しい値を持ち、それぞれの値はループの内側にある.
+*/
+
+const shape = {
+    radius: 10,
+    diameter() {
+        return this.radius * 2;
+    },
+    perimeter: () => 2 * Math.PI * this.radius
+};
+
+/*
+選択肢
+A: 20と62.83185307179586
+B: 20とNaN
+C: 20と63
+D: NaNと63
+*/
+
+/* 
+答え:B
+アロー関数はでは、thisキーワードは通常の関数と異なり、現在の周囲の範囲を参照する.
+これは、perimeter関数を呼ぶと、shapeオブジェクトではなく、その周囲の範囲(例えばwindow)を参照することを意味する
+そのオブジェクトには、radiusという値はなく、undefinedを返す
 */
