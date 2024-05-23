@@ -71,3 +71,19 @@ D: NaNと63
 これは、perimeter関数を呼ぶと、shapeオブジェクトではなく、その周囲の範囲(例えばwindow)を参照することを意味する
 そのオブジェクトには、radiusという値はなく、undefinedを返す
 */
+
++true;
+!"Rintaro";
+
+/*
+選択肢
+A: 1とfalse
+B: falseとNaN
+C: falseとfalse
+*/
+
+/*
+答え: A
+単項プラスは、オペラントを数値に変換する。数値じゃないものは数値に変換する。trueは1,falseは0である
+文字列「Rintaro」はtruthy valueで、ここでは、「truthy value」はfalsyなのかを解いている！　falseを返す。
+*/
