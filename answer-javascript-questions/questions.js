@@ -87,3 +87,34 @@ C: falseとfalse
 単項プラスは、オペラントを数値に変換する。数値じゃないものは数値に変換する。trueは1,falseは0である
 文字列「Rintaro」はtruthy valueで、ここでは、「truthy value」はfalsyなのかを解いている！　falseを返す。
 */
+
+const bird = {
+    size: 'small'
+};
+
+const mouse = {
+    name: 'Mickey',
+    small: true
+};
+
+/*
+A: mouse.bird.size is not valid
+B: mouse[bird.size] is not valid
+C: mouse[[bird.size]] is not valid
+D: すべて有効でない
+
+A
+JavaScriptでは、すべてのオブジェクトキーは文字列です（Symbolでない限り）。
+たとえそれを文字列として入力していなくても、それらは常にフードの下で文字列に変換されます。
+JavaScriptは、ステートメントを解釈（または、ボックス解除）します。
+大括弧表記を使用すると、最初の左大括弧 `[`を見て、右大括弧 `]`が見つかるまで進みます。その時だけ、そのステートメントを評価します。
+`mouse [bird.size]`： まず最初に、`bird.size`が評価されます。これは文字列の `"small"`となります。 `mouse["small"]`は、`true`を返します。
+しかし、ドット表記では、これは起こりません。 `mouse`は`bird`と呼ばれるキーを持っていません。 つまり`mouse.bird`は`undefined`となります。
+また、ドット表記を使って `size`を求めます： `mouse.bird.size`。 mouse.birdは未定義なので、実際にはundefined.sizeを要求しています。
+これは有効ではないので、`Cannot read property "size" of undefined`ような、エラーをスローします。
+ */
+
+
+
+
+
