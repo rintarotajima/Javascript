@@ -1,3 +1,3 @@
 import { Hello } from "./hello";
 
-new Hello("taro").greet();
+new Hello("daro").greet();
