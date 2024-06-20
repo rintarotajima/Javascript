@@ -1,6 +1,7 @@
 /** ↓ エディタで補完を効かせるための JSDoc */
 /** @type {import('webpack').Configuration} */
 const config = {
+    devtool: "sourc-map",
     module: {
       rules: [
         {
